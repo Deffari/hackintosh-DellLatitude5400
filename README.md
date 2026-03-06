@@ -13,9 +13,9 @@
 
 *Based on OpenCore, of course.*
 
-**WARNING: This repository now uses macOS 15 Sequoia, if you need info for Sonoma, Ventura, Montenery, or Big Sur; feel free to look at an older commit, or use tags.**
+**WARNING: This repository now uses macOS 15 Sequoia, if you need info for Sonoma, Ventura, Monterey, or Big Sur; feel free to look at an older commit, or use tags.**
 
-**Sequoia**: Be advised that the Intel WiFi kext was not updated to Sequoia yet. Intel cards WILL NOT work! Also, in order to upgrade to Sequoia you might have to temporarily disable the BlueToolFixup.kext in OpenCore.
+**Sequoia**: This EFI is now configured for the **Broadcom BCM94352ZAE (DW1560-class)** Wi-Fi/Bluetooth card using `AirportBrcmFixup` (v2.2.0) and `BrcmPatchRAM3` + `BrcmFirmwareData` (v2.7.1). Intel Wi-Fi/BT kexts (`AirportItlwm`, `IntelBluetoothFirmware`) have been removed. If you still have the stock Intel 9560 card, replace it with BCM94352ZAE for full native support.
 
 ![About my Mac](.img/system.png)
 
@@ -28,7 +28,7 @@
 |**IGPU**|Intel UHD 620|
 |**SSD**|Western Digital Black NVMe 500GB|
 |**ETH**|Intel I217-LM|
-|**WLAN+BT**|BCM94360NG (Intel 9560NGW can also work)|
+|**WLAN+BT**|Broadcom BCM94352ZAE (DW1560-class) — native macOS Sequoia support|
 |**WWAN**|Dell DW5809e (EM7305, 4G)|
 |**Audio**|Realtek ALC236|
 |**Ports**|USB-C (PD+DP-AltMode), 3xUSB3.0, HDMI, microSD, Multi-Jack, DC|
@@ -43,9 +43,8 @@
 ## Working
 
 - **Everything what is not in the Not working section :D**
-- Bluetooth (4.0, LE, Handoff) [out-of-the-box, no kext needed]
-- WLAN [no kext needed] (recommended)
-- Intel WLAN [kexts added, but not that stable]
+- Bluetooth (LE, Handoff) via Broadcom BCM94352ZAE
+- WLAN via Broadcom BCM94352ZAE (AirportBrcmFixup + brcmfx-country=#a boot-arg)
 - Ethernet
 - HDMI, DisplayPort Alt Mode (all with sound, but no volume adjustment)
 - USB-C (I'm using it with a docking station all the time)
