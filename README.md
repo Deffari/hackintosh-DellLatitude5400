@@ -11,11 +11,11 @@
 
 ---
 
-*Based on OpenCore, of course.*
+*Based on **OpenCore 1.0.6**, of course.*
 
 **WARNING: This repository now uses macOS 15 Sequoia, if you need info for Sonoma, Ventura, Monterey, or Big Sur; feel free to look at an older commit, or use tags.**
 
-**Sequoia**: This EFI is now configured for the **Broadcom BCM94352ZAE (DW1560-class)** Wi-Fi/Bluetooth card using `AirportBrcmFixup` (v2.2.0) and `BrcmPatchRAM3` + `BrcmFirmwareData` (v2.7.1). Intel Wi-Fi/BT kexts (`AirportItlwm`, `IntelBluetoothFirmware`) have been removed. If you still have the stock Intel 9560 card, replace it with BCM94352ZAE for full native support.
+**Sequoia**: This EFI is configured for the **Broadcom BCM94352ZAE (DW1560-class)** Wi-Fi/Bluetooth card using `AirportBrcmFixup` (v2.2.0) and `BrcmPatchRAM3` + `BrcmFirmwareData` (v2.7.1). Intel Wi-Fi/BT kexts (`AirportItlwm`, `IntelBluetoothFirmware`) have been removed. If you still have the stock Intel 9560 card, replace it with BCM94352ZAE for full native support. The OpenCanopy GUI picker is enabled with a 5-second auto-boot timer to macOS.
 
 ![About my Mac](.img/system.png)
 

@@ -1339,11 +1339,11 @@
 			<key>LauncherPath</key>
 			<string>Default</string>
 			<key>PickerAttributes</key>
-			<integer>0</integer>
+			<integer>17</integer>
 			<key>PickerAudioAssist</key>
 			<false/>
 			<key>PickerMode</key>
-			<string>Builtin</string>
+			<string>External</string>
 			<key>PickerVariant</key>
 			<string>Auto</string>
 			<key>PollAppleHotKeys</key>
@@ -1789,7 +1789,7 @@
 				Rg==
 				</data>
 				<key>boot-args</key>
-				<string>keepsyms=1 -wegbeta -igfxblt -lilubetaall revpatch=sbvmm brcmfx-country=#a</string>
+				<string>keepsyms=1 -wegbeta -igfxblt revpatch=sbvmm brcmfx-country=#a</string>
 				<key>csr-active-config</key>
 				<data>
 				AAAAAA==
@@ -1997,7 +1997,7 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
