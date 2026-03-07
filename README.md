@@ -17,6 +17,59 @@
 
 **Sequoia**: This EFI is configured for the **Broadcom BCM94352ZAE (DW1560-class)** Wi-Fi/Bluetooth card using `AirportBrcmFixup` (v2.2.0) and `BrcmPatchRAM3` + `BrcmFirmwareData` (v2.7.1). Intel Wi-Fi/BT kexts (`AirportItlwm`, `IntelBluetoothFirmware`) have been removed. If you still have the stock Intel 9560 card, replace it with BCM94352ZAE for full native support. The OpenCanopy GUI picker is enabled with a 5-second auto-boot timer to macOS.
 
+## Getting Started (Start Your Own Build)
+
+Want to use this EFI as the foundation for your own Dell Latitude 5400 hackintosh? Follow these steps:
+
+### 1. Fork or clone the base repository
+
+This EFI is derived from **[msbence's OpenCore Sequoia EFI](https://github.com/msbence/hackintosh)**. To start fresh from the same base:
+
+1. Go to the [msbence hackintosh repository](https://github.com/msbence/hackintosh) on GitHub
+2. Click **Fork** (top-right) to copy it to your own GitHub account, **or** click **Releases** to download the latest pre-built EFI zip directly
+3. Alternatively, fork **this** repository if you want to start from the already-customised Dell Latitude 5400 EFI
+
+### 2. Download and place the EFI
+
+1. Download the latest EFI release zip from the [Releases](../../releases) page of whichever repo you forked
+2. Extract it and copy the `EFI/` folder to the root of your USB flash drive (formatted as FAT32)
+   - The result should be `USB:/EFI/BOOT/BOOTx64.efi` and `USB:/EFI/OC/config.plist`
+
+### 3. Choose a config.plist for your hardware
+
+Two ready-to-use config files are provided in the [`configs/`](configs/) folder:
+
+| Config | Wi-Fi Card | Wi-Fi | Bluetooth | Notes |
+|---|---|---|---|---|
+| `configs/broadcom-wifi-bt/config.plist` | BCM94352ZAE (DW1560) | ✅ Working | ✅ Working | Main EFI config (also at `OC/config.plist`) |
+| `configs/intel-wifi-base/config.plist` | Intel Wireless-AC 9560 (stock) | ✅ Working | ⚠️ Needs setup | Use this if you kept the stock Intel card — see [Bluetooth setup notes](configs/intel-wifi-base/README.md) |
+
+Copy the config you need to `EFI/OC/config.plist` on your USB drive.
+
+### 4. Generate your own SMBIOS
+
+> **This step is mandatory.** Never use someone else's serial number.
+
+1. Download [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) and run it
+2. Choose model **MacBookPro15,4** (already set in the provided config files)
+3. Paste the generated `SystemSerialNumber`, `MLB`, `SystemUUID`, and `ROM` into your `config.plist` under `PlatformInfo > Generic`
+4. Use [ProperTree](https://github.com/corpnewt/ProperTree) or any plist editor to make the edit
+
+### 5. Boot and finish macOS installation
+
+1. Boot your Latitude 5400 from the USB (press F12 at the Dell splash screen to get the boot menu)
+2. Select your USB in OpenCore, then choose **Install macOS Sequoia**
+3. After installation, [mount your EFI partition](https://dortania.github.io/OpenCore-Post-Install/universal/oc2hdd.html) and copy the EFI folder there so you can boot without the USB
+
+### Adding your own config.plist to this repository
+
+If you have a working (or almost-working) `config.plist` that you want to save and share:
+
+1. Create a folder under `configs/` that describes your hardware variant (e.g. `configs/intel-wifi-base/`)
+2. Place your `config.plist` in that folder
+3. Add a short `README.md` next to it describing what works, what doesn't, and any required kexts
+4. Open a Pull Request — contributions are very welcome!
+
 ![About my Mac](.img/system.png)
 
 ## Specification
