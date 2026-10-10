@@ -1,0 +1,38 @@
+{
+  "_comment": "OpenHands MCP server template. Register with the CLI (`openhands mcp add`) or copy to ~/.openhands/mcp.json. The CLI-managed file adds transport/type/cwd/timeout/keep_alive/description/icon/authentication/enabled keys.",
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/workspace"]
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+    },
+    "git": {
+      "command": "uvx",
+      "args": ["mcp-server-git"]
+    },
+    "fetch": {
+      "command": "uvx",
+      "args": ["mcp-server-fetch"]
+    },
+    "github": {
+      "_comment": "requires a GitHub PAT with repo scope; set it before use",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "ghp_replace_me" }
+    },
+    "remote-http-example": {
+      "_comment": "HTTP/SSE transport with header auth (disabled by default)",
+      "url": "https://api.example.com/mcp",
+      "transport": "http",
+      "headers": { "Authorization": "Bearer replace_me" },
+      "enabled": false
+    }
+  }
+}
