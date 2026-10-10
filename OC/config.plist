@@ -454,6 +454,8 @@
 			<false/>
 			<key>AvoidRuntimeDefrag</key>
 			<true/>
+			<key>ClearTaskSwitchBit</key>
+			<false/>
 			<key>DevirtualiseMmio</key>
 			<true/>
 			<key>DisableSingleUser</key>
@@ -492,8 +494,6 @@
 			<false/>
 			<key>SyncRuntimePermissions</key>
 			<true/>
-			<key>ClearTaskSwitchBit</key>
-			<false/>
 		</dict>
 	</dict>
 	<key>DeviceProperties</key>
@@ -1185,6 +1185,114 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
+				<string>x86_64</string>
+				<key>BundlePath</key>
+				<string>IOSkywalkFamily.kext</string>
+				<key>Comment</key>
+				<string>IOSkywalkFamily 1.0 - OCLP legacy Wi-Fi, Darwin 23+ (blocked stock copy)</string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/IOSkywalkFamily</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string>23.0.0</string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>x86_64</string>
+				<key>BundlePath</key>
+				<string>IO80211FamilyLegacy.kext</string>
+				<key>Comment</key>
+				<string>IO80211FamilyLegacy 1200.12.2b1 - OCLP legacy Wi-Fi framework</string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/IO80211FamilyLegacy</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string>23.0.0</string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>x86_64</string>
+				<key>BundlePath</key>
+				<string>IO80211FamilyLegacy.kext/Contents/PlugIns/AirPortBrcmNIC.kext</string>
+				<key>Comment</key>
+				<string>AirPortBrcmNIC 1400.1.1 - BCM94352ZAE driver (Sonoma 14 / Sequoia 15)</string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/AirPortBrcmNIC</string>
+				<key>MaxKernel</key>
+				<string>24.99.99</string>
+				<key>MinKernel</key>
+				<string>23.0.0</string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>x86_64</string>
+				<key>BundlePath</key>
+				<string>AirPortBrcmNIC-Tahoe.kext</string>
+				<key>Comment</key>
+				<string>AirPortBrcmNIC 1400.1.1 (Tahoe 26 build) - BCM94352ZAE driver, Darwin 25+</string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/AirPortBrcmNIC</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string>25.0.0</string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>x86_64</string>
+				<key>BundlePath</key>
+				<string>ECM-Override.kext</string>
+				<key>Comment</key>
+				<string>ECM-Override 9.9.9 - keeps USB-C dock Ethernet (ECM) alive with IOSkywalk downgrade</string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string></string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string>23.0.0</string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>x86_64</string>
+				<key>BundlePath</key>
+				<string>AMFIPass.kext</string>
+				<key>Comment</key>
+				<string>AMFIPass 1.4.1 - allows AMFI-enabled boot on root-patched systems</string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/AMFIPass</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string>20.0.0</string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
 				<string>Any</string>
 				<key>BundlePath</key>
 				<string>AirportBrcmFixup.kext</string>
@@ -1239,7 +1347,24 @@
 			</dict>
 		</array>
 		<key>Block</key>
-		<array/>
+		<array>
+			<dict>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>Comment</key>
+				<string>Allow IOSkywalk downgrade (OCLP legacy Wi-Fi)</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Identifier</key>
+				<string>com.apple.iokit.IOSkywalkFamily</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string>23.0.0</string>
+				<key>Strategy</key>
+				<string>Exclude</string>
+			</dict>
+		</array>
 		<key>Emulate</key>
 		<dict>
 			<key>Cpuid1Data</key>
@@ -1424,7 +1549,7 @@
 			<key>ScanPolicy</key>
 			<integer>0</integer>
 			<key>SecureBootModel</key>
-			<string>Default</string>
+			<string>Disabled</string>
 			<key>Vault</key>
 			<string>Optional</string>
 		</dict>
@@ -1790,11 +1915,19 @@
 				<data>
 				Rg==
 				</data>
+				<key>bluetoothExternalDongleFailed</key>
+				<data>
+				AA==
+				</data>
+				<key>bluetoothInternalControllerInfo</key>
+				<data>
+				AAAAAAAAAAAAAAAA
+				</data>
 				<key>boot-args</key>
-				<string>keepsyms=1 -wegbeta -igfxblt revpatch=sbvmm brcmfx-country=#a</string>
+				<string>keepsyms=1 -wegbeta -igfxblt revpatch=sbvmm brcmfx-country=#a -brcmfxbeta -btlfxboardid ipc_control_port_options=0</string>
 				<key>csr-active-config</key>
 				<data>
-				AAAAAA==
+				AwgAAA==
 				</data>
 				<key>prev-lang:kbd</key>
 				<data>
@@ -1816,6 +1949,8 @@
 				<string>boot-args</string>
 				<string>csr-active-config</string>
 				<string>ForceDisplayRotationInEFI</string>
+				<string>bluetoothInternalControllerInfo</string>
+				<string>bluetoothExternalDongleFailed</string>
 			</array>
 		</dict>
 		<key>LegacyOverwrite</key>
@@ -1973,6 +2108,8 @@
 				<string>OpenVariableRuntimeDxe.efi</string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<true/>
 				<key>Path</key>
@@ -1985,6 +2122,8 @@
 				<string></string>
 				<key>Enabled</key>
 				<true/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -1997,6 +2136,8 @@
 				<string></string>
 				<key>Enabled</key>
 				<true/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2008,6 +2149,8 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
+				<false/>
+				<key>HideVerbose</key>
 				<false/>
 				<key>LoadEarly</key>
 				<false/>
@@ -2021,6 +2164,8 @@
 				<string></string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2032,6 +2177,8 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
+				<false/>
+				<key>HideVerbose</key>
 				<false/>
 				<key>LoadEarly</key>
 				<false/>
@@ -2045,6 +2192,8 @@
 				<string></string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2056,6 +2205,8 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
+				<false/>
+				<key>HideVerbose</key>
 				<false/>
 				<key>LoadEarly</key>
 				<false/>
@@ -2069,6 +2220,8 @@
 				<string></string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2080,6 +2233,8 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
+				<false/>
+				<key>HideVerbose</key>
 				<false/>
 				<key>LoadEarly</key>
 				<false/>
@@ -2093,6 +2248,8 @@
 				<string></string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2104,6 +2261,8 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
+				<false/>
+				<key>HideVerbose</key>
 				<false/>
 				<key>LoadEarly</key>
 				<false/>
@@ -2117,6 +2276,8 @@
 				<string></string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2128,6 +2289,8 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
+				<false/>
+				<key>HideVerbose</key>
 				<false/>
 				<key>LoadEarly</key>
 				<false/>
@@ -2141,6 +2304,8 @@
 				<string></string>
 				<key>Enabled</key>
 				<true/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2153,6 +2318,8 @@
 				<string>BiosVideo.efi</string>
 				<key>Enabled</key>
 				<true/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2165,6 +2332,8 @@
 				<string>ArpDxe.efi</string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2177,6 +2346,8 @@
 				<string>Dhcp4Dxe.efi</string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2189,6 +2360,8 @@
 				<string>DnsDxe.efi</string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2201,6 +2374,8 @@
 				<string>DpcDxe.efi</string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2213,6 +2388,8 @@
 				<string>Ext4Dxe.efi</string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2225,6 +2402,8 @@
 				<string>HttpBootDxe.efi</string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2237,6 +2416,8 @@
 				<string>HttpDxe.efi</string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2249,6 +2430,8 @@
 				<string>HttpUtilitiesDxe.efi</string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2261,6 +2444,8 @@
 				<string>Ip4Dxe.efi</string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2273,6 +2458,8 @@
 				<string>MnpDxe.efi</string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2285,6 +2472,8 @@
 				<string>OpenNtfsDxe.efi</string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2297,6 +2486,8 @@
 				<string>ResetNvramEntry.efi</string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2309,6 +2500,8 @@
 				<string>SnpDxe.efi</string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2321,6 +2514,8 @@
 				<string>TcpDxe.efi</string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2333,6 +2528,8 @@
 				<string>ToggleSipEntry.efi</string>
 				<key>Enabled</key>
 				<false/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
@@ -2344,6 +2541,8 @@
 				<key>Comment</key>
 				<string>Udp4Dxe.efi</string>
 				<key>Enabled</key>
+				<false/>
+				<key>HideVerbose</key>
 				<false/>
 				<key>LoadEarly</key>
 				<false/>
@@ -2357,6 +2556,8 @@
 				<string>FirmwareSettingsEntry.efi</string>
 				<key>Enabled</key>
 				<true/>
+				<key>HideVerbose</key>
+				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
