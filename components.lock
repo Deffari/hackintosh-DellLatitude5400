@@ -1,0 +1,379 @@
+{
+  "efi": "Dell Latitude 5400 (i5-8265U, Whiskey Lake)",
+  "target_macos": [
+    "macOS 15 Sequoia",
+    "macOS 26 Tahoe (Wi-Fi stack included)"
+  ],
+  "opencore_version": "1.0.8",
+  "opencore_source": "https://github.com/acidanthera/OpenCorePkg/releases/tag/1.0.8",
+  "generated": "2026-10-10",
+  "core_sha256": {
+    "BOOT/BOOTx64.efi": "d0163dfbe5d2ea46aececd7d7349acfa5b75dfed2993e8489816f3dda71914c8",
+    "OC/OpenCore.efi": "9ef21f9d846a992c030fa5858736a6d9efa70a3b4ad88b8d747338bb457b14d4"
+  },
+  "kexts": [
+    {
+      "name": "AMFIPass (OCLP payload)",
+      "bundle_path": "OC/Kexts/AMFIPass.kext",
+      "bundle_id": "com.dhinakg.AMFIPass",
+      "version": "1.4.1",
+      "upstream": "dortania/OpenCore-Legacy-Patcher",
+      "upstream_version": "1.4.1",
+      "injected": true,
+      "min_kernel": "20.0.0",
+      "max_kernel": ""
+    },
+    {
+      "name": "AirPortBrcmNIC Tahoe build (OCLP payload)",
+      "bundle_path": "OC/Kexts/AirPortBrcmNIC-Tahoe.kext",
+      "bundle_id": "com.apple.driver.AirPort.BrcmNIC",
+      "version": "1400.1.1",
+      "upstream": "dortania/OpenCore-Legacy-Patcher",
+      "upstream_version": "1.0.0",
+      "injected": true,
+      "min_kernel": "25.0.0",
+      "max_kernel": ""
+    },
+    {
+      "name": "AirportBrcmFixup",
+      "bundle_path": "OC/Kexts/AirportBrcmFixup.kext",
+      "bundle_id": "as.lvs1974.AirportBrcmFixup",
+      "version": "2.2.1",
+      "upstream": "acidanthera/AirportBrcmFixup",
+      "upstream_version": "2.2.1",
+      "injected": false,
+      "min_kernel": "",
+      "max_kernel": "20.9.9"
+    },
+    {
+      "name": "AlpsHID",
+      "bundle_path": "OC/Kexts/AlpsHID.kext",
+      "bundle_id": "com.blankmac.AlpsHID",
+      "version": "1.0.0d1",
+      "upstream": "blankmac/AlpsHID",
+      "upstream_version": "1.0.0d1",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "AppleALC",
+      "bundle_path": "OC/Kexts/AppleALC.kext",
+      "bundle_id": "as.vit9696.AppleALC",
+      "version": "1.9.8",
+      "upstream": "acidanthera/AppleALC",
+      "upstream_version": "1.9.8",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "BlueToolFixup",
+      "bundle_path": "OC/Kexts/BlueToolFixup.kext",
+      "bundle_id": "as.acidanthera.BlueToolFixup",
+      "version": "2.7.2",
+      "upstream": "acidanthera/BrcmPatchRAM",
+      "upstream_version": "2.7.2",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "BrcmFirmwareData",
+      "bundle_path": "OC/Kexts/BrcmFirmwareData.kext",
+      "bundle_id": "as.acidanthera.BrcmFirmwareStore",
+      "version": "2.7.2",
+      "upstream": "acidanthera/BrcmPatchRAM",
+      "upstream_version": "2.7.2",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "BrcmPatchRAM3",
+      "bundle_path": "OC/Kexts/BrcmPatchRAM3.kext",
+      "bundle_id": "as.acidanthera.BrcmPatchRAM3",
+      "version": "2.7.2",
+      "upstream": "acidanthera/BrcmPatchRAM",
+      "upstream_version": "2.7.2",
+      "injected": true,
+      "min_kernel": "21.0.0",
+      "max_kernel": ""
+    },
+    {
+      "name": "BrightnessKeys",
+      "bundle_path": "OC/Kexts/BrightnessKeys.kext",
+      "bundle_id": "as.acidanthera.BrightnessKeys",
+      "version": "1.0.3",
+      "upstream": "acidanthera/BrightnessKeys",
+      "upstream_version": "1.0.3",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "CPUFriend",
+      "bundle_path": "OC/Kexts/CPUFriend.kext",
+      "bundle_id": "org.acidanthera.driver.CPUFriend",
+      "version": "1.3.0",
+      "upstream": "acidanthera/CPUFriend",
+      "upstream_version": "1.3.0",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "CPUFriendDataProvider (local, generated for i5-8265U)",
+      "bundle_path": "OC/Kexts/CPUFriendDataProvider.kext",
+      "bundle_id": "org.vanilla.driver.CPUFriendDataProvider",
+      "version": "1.0.0",
+      "upstream": "local",
+      "upstream_version": "1.0.0",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "ECM-Override (OCLP payload)",
+      "bundle_path": "OC/Kexts/ECM-Override.kext",
+      "bundle_id": "com.dortania.ECM-Override",
+      "version": "9.9.9",
+      "upstream": "dortania/OpenCore-Legacy-Patcher",
+      "upstream_version": "1.0.0",
+      "injected": true,
+      "min_kernel": "23.0.0",
+      "max_kernel": ""
+    },
+    {
+      "name": "IO80211FamilyLegacy + AirPortBrcmNIC (OCLP payload)",
+      "bundle_path": "OC/Kexts/IO80211FamilyLegacy.kext",
+      "bundle_id": "com.apple.iokit.IO80211FamilyLegacy",
+      "version": "1200.12.2b1",
+      "upstream": "dortania/OpenCore-Legacy-Patcher",
+      "upstream_version": "1.0.0",
+      "injected": true,
+      "min_kernel": "23.0.0",
+      "max_kernel": "24.99.99"
+    },
+    {
+      "name": "IOSkywalkFamily (OCLP payload)",
+      "bundle_path": "OC/Kexts/IOSkywalkFamily.kext",
+      "bundle_id": "com.apple.iokit.IOSkywalkFamily",
+      "version": "1.0",
+      "upstream": "dortania/OpenCore-Legacy-Patcher",
+      "upstream_version": "1.2.0",
+      "injected": true,
+      "min_kernel": "23.0.0",
+      "max_kernel": ""
+    },
+    {
+      "name": "IntelMausi",
+      "bundle_path": "OC/Kexts/IntelMausi.kext",
+      "bundle_id": "as.acidanthera.mieze.IntelMausi",
+      "version": "1.0.8",
+      "upstream": "acidanthera/IntelMausi",
+      "upstream_version": "1.0.8",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "Lilu",
+      "bundle_path": "OC/Kexts/Lilu.kext",
+      "bundle_id": "as.vit9696.Lilu",
+      "version": "1.7.2",
+      "upstream": "acidanthera/Lilu",
+      "upstream_version": "1.7.2",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "NVMeFix",
+      "bundle_path": "OC/Kexts/NVMeFix.kext",
+      "bundle_id": "org.acidanthera.NVMeFix",
+      "version": "1.1.3",
+      "upstream": "acidanthera/NVMeFix",
+      "upstream_version": "1.1.3",
+      "injected": false,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "NoTouchID",
+      "bundle_path": "OC/Kexts/NoTouchID.kext",
+      "bundle_id": "xyz.racermaster.NoTouchID",
+      "version": "1.0.4",
+      "upstream": "acidanthera/NoTouchID",
+      "upstream_version": "1.0.4",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "RealtekCardReader",
+      "bundle_path": "OC/Kexts/RealtekCardReader.kext",
+      "bundle_id": "science.firewolf.rtsx",
+      "version": "0.9.7",
+      "upstream": "0xFireWolf/RealtekCardReader",
+      "upstream_version": "0.9.7",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "RealtekCardReaderFriend",
+      "bundle_path": "OC/Kexts/RealtekCardReaderFriend.kext",
+      "bundle_id": "science.firewolf.rtsf",
+      "version": "1.0.4",
+      "upstream": "0xFireWolf/RealtekCardReaderFriend",
+      "upstream_version": "1.0.4",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "RestrictEvents",
+      "bundle_path": "OC/Kexts/RestrictEvents.kext",
+      "bundle_id": "as.vit9696.RestrictEvents",
+      "version": "1.1.6",
+      "upstream": "acidanthera/RestrictEvents",
+      "upstream_version": "1.1.6",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "SMCBatteryManager (VirtualSMC plugin)",
+      "bundle_path": "OC/Kexts/SMCBatteryManager.kext",
+      "bundle_id": "ru.usrsse2.SMCBatteryManager",
+      "version": "1.3.8",
+      "upstream": "acidanthera/VirtualSMC",
+      "upstream_version": "1.3.8",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "SMCDellSensors (VirtualSMC plugin)",
+      "bundle_path": "OC/Kexts/SMCDellSensors.kext",
+      "bundle_id": "as.lvs1974.SMCDellSensors",
+      "version": "1.3.8",
+      "upstream": "acidanthera/VirtualSMC",
+      "upstream_version": "1.3.8",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "SMCProcessor (VirtualSMC plugin)",
+      "bundle_path": "OC/Kexts/SMCProcessor.kext",
+      "bundle_id": "as.vit9696.SMCProcessor",
+      "version": "1.3.8",
+      "upstream": "acidanthera/VirtualSMC",
+      "upstream_version": "1.3.8",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "SMCSuperIO (VirtualSMC plugin)",
+      "bundle_path": "OC/Kexts/SMCSuperIO.kext",
+      "bundle_id": "ru.joedm.SMCSuperIO",
+      "version": "1.3.8",
+      "upstream": "acidanthera/VirtualSMC",
+      "upstream_version": "1.3.8",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "USBPorts (local USB map for Latitude 5400, incl. M.2 BT port)",
+      "bundle_path": "OC/Kexts/USBPorts.kext",
+      "bundle_id": "com.Headsoft.USBPorts",
+      "version": "1.0",
+      "upstream": "local",
+      "upstream_version": "1.0",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "VirtualSMC",
+      "bundle_path": "OC/Kexts/VirtualSMC.kext",
+      "bundle_id": "as.vit9696.VirtualSMC",
+      "version": "1.3.8",
+      "upstream": "acidanthera/VirtualSMC",
+      "upstream_version": "1.3.8",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "VoodooI2C (+ VoodooI2CServices/VoodooGPIO/VoodooInput plugins)",
+      "bundle_path": "OC/Kexts/VoodooI2C.kext",
+      "bundle_id": "com.alexandred.VoodooI2C",
+      "version": "2.9.1",
+      "upstream": "VoodooI2C/VoodooI2C",
+      "upstream_version": "2.9.1",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "VoodooI2CHID",
+      "bundle_path": "OC/Kexts/VoodooI2CHID.kext",
+      "bundle_id": "com.alexandred.VoodooI2CHID",
+      "version": "1",
+      "upstream": "VoodooI2C/VoodooI2C",
+      "upstream_version": "2.9.1",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "VoodooPS2Controller",
+      "bundle_path": "OC/Kexts/VoodooPS2Controller.kext",
+      "bundle_id": "as.acidanthera.voodoo.driver.PS2Controller",
+      "version": "2.3.7",
+      "upstream": "acidanthera/VoodooPS2",
+      "upstream_version": "2.3.7",
+      "injected": false,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "WhateverGreen",
+      "bundle_path": "OC/Kexts/WhateverGreen.kext",
+      "bundle_id": "as.vit9696.WhateverGreen",
+      "version": "1.7.1",
+      "upstream": "acidanthera/WhateverGreen",
+      "upstream_version": "1.7.1",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "XHCI-unsupported",
+      "bundle_path": "OC/Kexts/XHCI-unsupported.kext",
+      "bundle_id": "org.rehabman.injector.XHCI.unsupported",
+      "version": "0.9.2",
+      "upstream": "rehabman/XHCI-unsupported",
+      "upstream_version": "0.9.2",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    },
+    {
+      "name": "vkgLegacySierraQMI (Dell DW5809e WWAN, legacy)",
+      "bundle_path": "OC/Kexts/vkgLegacySierraQMI.kext",
+      "bundle_id": "com.apple.driver.vkgLegacySierraQMI",
+      "version": "1.0.1",
+      "upstream": "local/legacy",
+      "upstream_version": "1.0.1",
+      "injected": true,
+      "min_kernel": "",
+      "max_kernel": ""
+    }
+  ]
+}
