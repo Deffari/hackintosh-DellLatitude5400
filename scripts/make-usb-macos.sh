@@ -42,13 +42,19 @@ done
 command -v diskutil >/dev/null || { echo "diskutil not found" >&2; exit 1; }
 
 # --- safety: only removable media -------------------------------------------------
-INTERNAL="$(diskutil info -plist "$DISK" | /usr/libexec/PlistBuddy -c "Print :Internal" /dev/stdin 2>/dev/null || echo "true")"
-REMOVABLE="$(diskutil info -plist "$DISK" | /usr/libexec/PlistBuddy -c "Print :Removable" /dev/stdin 2>/dev/null || echo "false")"
+INFO="$(diskutil info -plist "$DISK" 2>/dev/null || true)"
+read_info() { printf '%s' "$INFO" | /usr/libexec/PlistBuddy -c "Print :$1" /dev/stdin 2>/dev/null || true; }
+INTERNAL="$(read_info Internal)"
+REMOVABLE="$(read_info Removable)"
+EJECTABLE="$(read_info Ejectable)"
 if [[ "$INTERNAL" == "true" ]]; then
-  echo "refusing to touch $DISK: it is reported as an internal disk" >&2
+  echo "refusing to touch $DISK: diskutil reports it as an internal disk" >&2
   exit 1
 fi
-echo "target : $DISK (removable=$REMOVABLE, internal=$INTERNAL)"
+if [[ -z "$INTERNAL" ]]; then
+  echo "warning: could not determine whether $DISK is internal - double-check with 'diskutil list'" >&2
+fi
+echo "target : $DISK (internal=${INTERNAL:-unknown}, removable=${REMOVABLE:-unknown}, ejectable=${EJECTABLE:-unknown})"
 if [[ "$CONFIRM" != "yes" ]]; then
   echo "re-run with --yes to confirm that EVERYTHING on $DISK will be erased" >&2
   exit 1
