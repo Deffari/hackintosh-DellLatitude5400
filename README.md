@@ -15,7 +15,7 @@
 
 **WARNING: This repository now uses macOS 15 Sequoia, if you need info for Sonoma, Ventura, Monterey, or Big Sur; feel free to look at an older commit, or use tags.**
 
-**Sequoia**: This EFI is configured for the **Broadcom BCM94352ZAE (DW1560-class)** Wi-Fi/Bluetooth card using `AirportBrcmFixup` (v2.2.0) and `BrcmPatchRAM3` + `BrcmFirmwareData` (v2.7.1). Intel Wi-Fi/BT kexts (`AirportItlwm`, `IntelBluetoothFirmware`) have been removed. If you still have the stock Intel 9560 card, replace it with BCM94352ZAE for full native support. The OpenCanopy GUI picker is enabled with a 4-second auto-boot timer to macOS.
+**Sequoia**: This EFI is configured for the **Broadcom BCM94352ZAE (DW1560-class)** Wi-Fi/Bluetooth card using `AirportBrcmFixup` (v2.2.0) and `BrcmPatchRAM3` + `BrcmFirmwareData` (v2.7.1). Intel Wi-Fi/BT kexts (`AirportItlwm`, `IntelBluetoothFirmware`) have been removed. If you still have the stock Intel 9560 card, replace it with BCM94352ZAE. **Bluetooth on Sequoia needs `-btlfxboardid` and the `bluetoothExternalDongleFailed`/`bluetoothInternalControllerInfo` NVRAM keys (Add and Delete); see [the knowledge base](https://github.com/Deffari/2026-New-Sequioa/blob/main/docs/WIRELESS-BLUETOOTH.md). The `OC/config.plist` in this repo is the older Monterey-era layout and does not include them.** The OpenCanopy GUI picker is enabled with a 4-second auto-boot timer to macOS.
 
 ![About my Mac](.img/system.png)
 
@@ -28,7 +28,7 @@
 |**IGPU**|Intel UHD 620|
 |**SSD**|Western Digital Black NVMe 500GB|
 |**ETH**|Intel I217-LM|
-|**WLAN+BT**|Broadcom BCM94352ZAE (DW1560-class) — native macOS Sequoia support|
+|**WLAN+BT**|Broadcom BCM94352ZAE (DW1560-class) — Broadcom; Sequoia needs the kext stack in the knowledge base|
 |**WWAN**|Dell DW5809e (EM7305, 4G)|
 |**Audio**|Realtek ALC236|
 |**Ports**|USB-C (PD+DP-AltMode), 3xUSB3.0, HDMI, microSD, Multi-Jack, DC|
